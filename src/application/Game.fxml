@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.WorldControl">
+   <top>
+      <Canvas id="MapView" fx:id="worldmap" height="800.0" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" width="1000.0" BorderPane.alignment="CENTER" />
+   </top>
+</BorderPane>
