@@ -9,18 +9,16 @@ public class GameWorld {
   private double worldsizex,worldsizey;
   private List<GameObject> gameobjects;
   private List<SpaceCraft> spaceships;
-  private boolean addedoncollision,oncollision;
   private double timefromLastPowerUp,powerUpSpawnDelay;
   private Game game;
+
   public GameWorld(double worldsizex, double worldsizey,Game game) {
 	super();
 	this.worldsizex = worldsizex;
 	this.worldsizey = worldsizey;
 	gameobjects=new LinkedList<>();
 	spaceships=new LinkedList<>();
-	oncollision=false;
 	this.game=game;
-	addedoncollision=false;
 	timefromLastPowerUp=0;
 	powerUpSpawnDelay=3;
  }
@@ -39,10 +37,9 @@ protected void addShip(SpaceCraft sc){
 	spaceships.add(sc);
  }
 
-protected void addGameObject(GameObject gameobject){
+public void addGameObject(GameObject gameobject){
 	gameobjects.add(gameobject);
 	gameobject.setWorld(this);
-	if(oncollision) addedoncollision=true;
 }
 
 protected void updateCollisions(){
@@ -73,7 +70,7 @@ protected void updateCollisions(){
 	}
 
 }
-protected void update(double deltatime){
+public void update(double deltatime){
 	updateCollisions();
 	Iterator<GameObject> iter=gameobjects.iterator();
 	while(iter.hasNext()){
@@ -122,7 +119,7 @@ private void spawnRandPowerUp(){
 	}
 	
 }
-private void spawnPoweUp(EffectType effect){
+public void spawnPoweUp(EffectType effect){
 	Random rand=new Random();
 	int side=rand.nextInt(4);
 	if(side==0){

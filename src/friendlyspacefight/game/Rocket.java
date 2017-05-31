@@ -2,12 +2,10 @@ package friendlyspacefight.game;
 
 import java.util.List;
 
-import com.sun.media.jfxmedia.events.NewFrameEvent;
-
 public class Rocket extends WeaponParticle {
 	double rotatespeed;
 	double accelerate;
-	Rocket(){
+	public Rocket(){
 	super();	
 	}
 	
@@ -15,6 +13,7 @@ public class Rocket extends WeaponParticle {
 	
 	@Override
 	public void initialize() {
+		getSpacecraft().getShipstats().addRocketsfired(1);
 		setDmg(1);
 		rotatespeed=90*(Math.PI/180.0);
 		setMoveVector(Coordinate.multiple(getDirection(),500));	

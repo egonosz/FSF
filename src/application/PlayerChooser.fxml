@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ChooserController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="93.0" prefWidth="304.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="165.0" prefWidth="212.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="41.0" prefWidth="158.0">
+                     <children>
+                        <ComboBox fx:id="player1combo" prefWidth="150.0" promptText="Player 1" />
+                        <Button fx:id="ok" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onOk" prefHeight="25.0" prefWidth="120.0" text="Ok">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="45.0" prefWidth="147.0">
+                     <children>
+                        <ComboBox fx:id="player2combo" prefWidth="150.0" promptText="Player 2">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin></ComboBox>
+                        <Button mnemonicParsing="false" onAction="#onCancel" prefHeight="25.0" prefWidth="120.0" text="Back">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

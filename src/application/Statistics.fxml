@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="356.0" prefWidth="456.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.StatisticsController">
+   <children>
+      <BorderPane prefHeight="800.0" prefWidth="1000.0">
+         <bottom>
+            <Button fx:id="back" mnemonicParsing="false" onAction="#onBackAction" prefHeight="18.0" prefWidth="127.0" text="Back" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </BorderPane.margin>
+            </Button>
+         </bottom>
+         <top>
+            <ChoiceBox fx:id="playerchoice" prefWidth="150.0" BorderPane.alignment="TOP_LEFT" />
+         </top>
+         <center>
+            <GridPane prefHeight="750.0" prefWidth="790.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="329.0" minWidth="10.0" prefWidth="122.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="682.0" minWidth="10.0" prefWidth="149.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="803.0" minWidth="10.0" prefWidth="115.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="803.0" minWidth="10.0" prefWidth="115.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="803.0" minWidth="10.0" prefWidth="149.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="803.0" minWidth="10.0" prefWidth="122.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="803.0" minWidth="10.0" prefWidth="149.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="803.0" minWidth="10.0" prefWidth="133.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="239.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="487.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="623.0" minHeight="10.0" prefHeight="623.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label prefHeight="66.0" prefWidth="208.0" text="Won games:" />
+                  <Label fx:id="wins" prefHeight="80.0" prefWidth="153.0" GridPane.columnIndex="1" />
+                  <Label prefHeight="57.0" prefWidth="165.0" text="Lost games:" GridPane.rowIndex="1" />
+                  <Label fx:id="losts" prefHeight="65.0" prefWidth="188.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label prefHeight="71.0" prefWidth="236.0" text="Damage done:" GridPane.columnIndex="2" />
+                  <Label prefHeight="75.0" prefWidth="225.0" text="Damage taken:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Label prefHeight="101.0" prefWidth="282.0" text="Projectiles fired:" GridPane.columnIndex="4" />
+                  <Label prefHeight="59.0" prefWidth="252.0" text="Rockets fired:" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                  <Label prefHeight="56.0" prefWidth="169.0" text="Powerups picked up:" GridPane.columnIndex="6" />
+                  <Label prefHeight="63.0" prefWidth="135.0" text="Shot hits:" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                  <Label fx:id="dmgdone" prefHeight="63.0" prefWidth="204.0" GridPane.columnIndex="3" />
+                  <Label fx:id="dmgtaken" prefHeight="87.0" prefWidth="244.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Label fx:id="projfire" prefHeight="90.0" prefWidth="270.0" GridPane.columnIndex="5" />
+                  <Label fx:id="rocketfire" prefHeight="80.0" prefWidth="205.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                  <Label fx:id="powerups" prefHeight="89.0" prefWidth="192.0" GridPane.columnIndex="7" />
+                  <Label fx:id="hits" prefHeight="94.0" prefWidth="221.0" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

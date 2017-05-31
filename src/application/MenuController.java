@@ -9,7 +9,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -34,12 +33,24 @@ public class MenuController {
 			menuStage.setScene(scene);
 			menuStage.show();
 	        scene.getRoot().requestFocus();
-
 			NewGameController menucontroller =loader.getController();
+			menucontroller.setParentScene(scene);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+	}
+	@FXML
+	void onStatisticsAction(ActionEvent event) throws IOException{
+		FXMLLoader loader =new FXMLLoader(getClass().getResource("Statistics.fxml"));
+		AnchorPane root = loader.load();
+		Scene scene = new Scene(root,1000,800);
+		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		Stage stage = (Stage) newgame.getScene().getWindow();
+		stage.setScene(scene);
+		stage.show();
+        scene.getRoot().requestFocus();
+	
 	}
 	@FXML
 	void onExitAction(ActionEvent event){

@@ -16,7 +16,7 @@ private Canvas worldmap;
 private Game game;
 private MainLoop mainloop;
 private EnumSet<KeyCode> keydown;
-
+private NewGameController controller;
 public WorldControl() {
 	super();
 }
@@ -30,6 +30,11 @@ private void keyReleased(KeyEvent evt){
 		keydown.remove(evt.getCode());
 
 }
+public void startGame(String player1,String player2){
+	mainloop.setPlayerNames(player1, player2);
+	mainloop.start();
+	
+}
 @FXML
 private void initialize(){
 	keydown=EnumSet.noneOf(KeyCode.class);
@@ -38,7 +43,6 @@ private void initialize(){
 	game.start();
 	mainloop=new MainLoop(game,worldmap);
 	mainloop.addKeyDownSet(keydown);
-	mainloop.start();
 }
 public void asd() {
 	// TODO Auto-generated method stub

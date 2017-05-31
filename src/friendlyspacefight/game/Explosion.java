@@ -5,13 +5,16 @@ public class Explosion extends BaseGameObject implements Collidable {
 	private double hitCircleRadius;
 	private double dmg;
 	private boolean boom;
-	public Explosion(Coordinate coordinates,double dmg) {
+	private SpaceCraft spacecraft;
+	
+	public Explosion(Coordinate coordinates,double dmg,SpaceCraft spacecraft) {
 		super();
 		this.setPower(dmg*10);
 		this.setDmg(dmg);
 		setCollisionHitCicrcle(dmg*10);
 		setCoordinates(coordinates);
 		setIsAlive(true);
+		this.spacecraft=spacecraft;
 		boom=false;
 	}
 	@Override
@@ -60,6 +63,12 @@ public class Explosion extends BaseGameObject implements Collidable {
 	public boolean boom() {
 		return boom;
 	}
-
+	public SpaceCraft getSpacecraft() {
+		return spacecraft;
+	}
+	public void setSpacecraft(SpaceCraft spacecraft) {
+		this.spacecraft = spacecraft;
+	}
+	
 
 }

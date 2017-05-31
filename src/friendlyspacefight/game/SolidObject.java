@@ -128,6 +128,22 @@ private boolean iscollidedonlastcheck;
 		return collisionCircleRadius;
 	}
 
+	public Coordinate getCollisionnewmovevec() {
+		return collisionnewmovevec;
+	}
+
+	public void setCollisionnewmovevec(Coordinate collisionnewmovevec) {
+		this.collisionnewmovevec = collisionnewmovevec;
+	}
+
+	public Coordinate getCollisionnewcoor() {
+		return collisionnewcoor;
+	}
+
+	public void setCollisionnewcoor(Coordinate collisionnewcoor) {
+		this.collisionnewcoor = collisionnewcoor;
+	}
+
 	
 
 }

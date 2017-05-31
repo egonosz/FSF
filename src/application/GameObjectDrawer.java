@@ -1,7 +1,4 @@
 package application;
-import javafx.scene.paint.Color;
-
-import java.io.File;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -9,13 +6,13 @@ import java.util.List;
 import friendlyspacefight.game.Coordinate;
 import friendlyspacefight.game.EffectType;
 import friendlyspacefight.game.Explosion;
-import friendlyspacefight.game.GameObject;
 import friendlyspacefight.game.Projectile;
 import friendlyspacefight.game.Rocket;
 import friendlyspacefight.game.SpaceCraft;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import javafx.scene.paint.Color;
 
 public class GameObjectDrawer {
 private GraphicsContext graphicalcontext;private Canvas canvas;

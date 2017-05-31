@@ -1,7 +1,6 @@
 package application;
 import java.util.List;
 
-import friendlyspacefight.game.Coordinate;
 import friendlyspacefight.game.Effect;
 import friendlyspacefight.game.EffectType;
 import friendlyspacefight.game.Player;

@@ -9,7 +9,7 @@ public class Rapidfire extends ShipEffect {
 	
 	public Rapidfire(double expiretime) {
 		super(expiretime);
-		effectpower=1.2;
+		effectpower=0.8;
 	}
 	
 	@Override

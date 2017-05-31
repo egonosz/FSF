@@ -22,7 +22,7 @@
         </rowConstraints>
          <children>
             <Button fx:id="newgame" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onNewGameClick" prefHeight="50.0" prefWidth="250.0" text="New game" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <Button fx:id="statistics" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" text="Statistics" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <Button fx:id="statistics" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onStatisticsAction" prefHeight="50.0" prefWidth="250.0" text="Statistics" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
             <Button fx:id="exit" mnemonicParsing="false" onAction="#onExitAction" prefHeight="50.0" prefWidth="250.0" text="Exit" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
          </children>
       </GridPane>

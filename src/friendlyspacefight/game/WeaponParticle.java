@@ -21,7 +21,7 @@ public abstract class WeaponParticle extends SolidObject {
 	@Override
 	public void onCollision(Collision collision) {
 		GameWorld wrld=getWorld();
-		Explosion exp=new Explosion(collision.getCollisioncoor(), getDmg());
+		Explosion exp=new Explosion(collision.getCollisioncoor(), getDmg(),getSpacecraft());
 		wrld.addGameObject(exp);
 		this.setIsAlive(false);
 	}

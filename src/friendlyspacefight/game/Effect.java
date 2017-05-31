@@ -4,11 +4,11 @@ public interface Effect {
 	static public Effect getInstanceOf(EffectType type) {
 		switch(type){
 		case RAPIDFIRE:
-			return new Rapidfire(5.0d);
+			return new Rapidfire(20.0d);
 		case ULTRARAPIDFIRE:
-			return new UltraRapidFire(5.0d);
+			return new UltraRapidFire(20.0d);
 		case DOUBLEDMG:
-			return new DoubleDmg(5.0d);
+			return new DoubleDmg(20.0d);
 		case REFILL:
 			return new Refill(0);
 		case JOKES :

@@ -9,15 +9,16 @@ public class SpaceCraft extends SolidObject {
 	private Weapon rocketlauncher, particlecannon1, particlecannon2;
 	private List<Effect> effects;
 	private List<Weapon> weapons;
-	
+	private ShipStatistics shipstats;
 	public SpaceCraft(Coordinate coordinates, Coordinate direction, double maxspeed) {
 		super(coordinates, direction, maxspeed);
 		health=1000;
 		maxhealth=1000;
 		AccPower=0;
-		deltarotate=0;
+		deltarotate=1;
 		setupWeapons();
 		effects= new LinkedList<>();
+		shipstats= new ShipStatistics();
 	}
 	
 	private void setupWeapons(){
@@ -41,6 +42,7 @@ public class SpaceCraft extends SolidObject {
 				
 		if(collision.getCollided() instanceof PowerUp){
 			PowerUp pu=(PowerUp)collision.getCollided();
+			shipstats.addPoweruppickups(1);
 			addEffect(pu.getEffect());
 			pu.setIsAlive(false);
 			return;
@@ -93,7 +95,8 @@ public class SpaceCraft extends SolidObject {
 				self.normalize();
 				self=Coordinate.add(Coordinate.multiple(self,e.getPower()),getMoveVector());
 				setMoveVector(self);
-
+				long dmg=(long)e.getDmg();
+				e.getSpacecraft().getShipstats().addShothits(1).addDmgdone(dmg);
 			}
 		}
 		Coordinate olddir=getDirection();
@@ -120,6 +123,7 @@ public class SpaceCraft extends SolidObject {
 	}
 	private void dmgship(double dmg){
 		health-=dmg;
+		shipstats.addDmgtaken((long)dmg);
 		if(health<0){
 			setIsAlive(false);
 		}
@@ -172,18 +176,18 @@ public class SpaceCraft extends SolidObject {
 	}
 
 	public void accelerate(){
-		AccPower=500;
+		AccPower=300;
 	}
 	
 	public void decelerate(){
-		AccPower=-500;
+		AccPower=-300;
 	}
 	
 	public void turnLeft(){
-		deltarotate=-240*(Math.PI/180.0);
+		deltarotate=-160*(Math.PI/180.0);
 	}
 	public void turnRight(){
-		deltarotate=240*(Math.PI/180.0);
+		deltarotate=160*(Math.PI/180.0);
 	}
 	public void shootRocket(){
 		rocketlauncher.Shoot();
@@ -219,4 +223,13 @@ public class SpaceCraft extends SolidObject {
 	public List<Effect> getEffects(){
 		return effects;
 	}
+
+	public ShipStatistics getShipstats() {
+		return shipstats;
+	}
+
+	public void setShipstats(ShipStatistics shipstats) {
+		this.shipstats = shipstats;
+	}
+	
 }
